@@ -4,12 +4,6 @@
 
 {% block body %}
 <style>
-  /* body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 20px;
-  } */
-
   h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -121,7 +115,7 @@
     });
 
     function updateLike() {
-      fetch(`/like/${currentVideoId}/`)
+      fetch(`/video/like/${currentVideoId}/`)
         .then(response => response.json())
         .then(data => {
           document.getElementById('modal-likes-count').textContent = data.likes;
@@ -131,7 +125,7 @@
     }
 
     function updateDislike() {
-      fetch(`/dislike/${currentVideoId}/`)
+      fetch(`/video/dislike/${currentVideoId}/`)
         .then(response => response.json())
         .then(data => {
           document.getElementById('modal-likes-count').textContent = data.likes;
